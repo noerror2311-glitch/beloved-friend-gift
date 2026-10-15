@@ -1,0 +1,217 @@
+:root {
+  --ink-deep: #1B2436;
+  --ink-mid: #2A3450;
+  --parchment: #F3ECE0;
+  --parchment-soft: #EFE6D6;
+  --gold: #C9A464;
+  --gold-soft: #DCC08C;
+  --gold-deep: #A97F42;
+  --rose: #D8A7A0;
+  --rose-deep: #B4695F;
+  --plum: #5C3A44;
+  --ink-brown: #3A2C22;
+  --text-dark: #161821;
+  --text-on-dark: #E9E2D3;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Literata', Georgia, 'Times New Roman', serif;
+  color: var(--ink-brown);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.page { display: none; min-height: 100vh; min-height: 100dvh; }
+.page.active { display: flex; flex-direction: column; }
+
+.bg-dark { background: linear-gradient(180deg, var(--ink-deep) 0%, var(--ink-mid) 55%, #4A4F63 100%); }
+.bg-light { background: linear-gradient(180deg, #8B8574 0%, var(--parchment-soft) 30%, var(--parchment) 100%); }
+
+.page-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 28px;
+}
+
+.wrap-inner { max-width: 600px; width: 100%; margin: 0 auto; }
+
+.candle {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold); margin-bottom: 30px;
+  box-shadow: 0 0 20px 6px rgba(201,164,100,0.55), 0 0 60px 20px rgba(201,164,100,0.15);
+  animation: flicker 3s ease-in-out 1;
+}
+@keyframes flicker {
+  0% { opacity: 0; transform: scale(0.6); }
+  30% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Eyebrow — handwritten feel, sits above the main line like a whispered aside */
+.eyebrow {
+  font-family: 'Caveat', 'Segoe Script', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+  line-height: 1;
+}
+.bg-dark .eyebrow { color: var(--gold-soft); text-shadow: 0 2px 14px rgba(201,164,100,0.35); }
+.bg-light .eyebrow { color: var(--rose-deep); }
+
+h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0 0 20px;
+  max-width: 14ch;
+  background: linear-gradient(135deg, var(--text-on-dark) 25%, var(--gold-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 30px rgba(201,164,100,0.15);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(233,226,211,0.78);
+  max-width: 42ch;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.letter-open {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--plum);
+  margin: 0 0 24px;
+}
+
+p.body-text {
+  font-size: 1.05rem;
+  color: var(--ink-brown);
+  opacity: 0.85;
+  margin: 0 auto 20px;
+  max-width: 52ch;
+}
+
+.vows-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+  color: var(--plum);
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.vow-list { display: flex; flex-direction: column; gap: 28px; text-align: left; }
+.vow { display: flex; align-items: flex-start; gap: 16px; }
+.vow-mark {
+  flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold-deep); margin-top: 11px;
+  box-shadow: 0 0 8px 2px rgba(169,127,66,0.35);
+}
+.vow-text {
+  font-family: 'Literata', serif;
+  font-size: 1.1rem;
+  color: var(--ink-brown);
+  line-height: 1.6;
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  max-height: 480px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0 18px 50px -12px rgba(27,36,54,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+}
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.placeholder-text {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; padding: 24px;
+  border: 1.5px dashed rgba(92,58,68,0.3);
+  margin: 10px; border-radius: 4px;
+}
+.placeholder-icon { font-size: 1.6rem; margin-bottom: 6px; }
+.placeholder-text p { margin: 0; color: rgba(58,44,34,0.65); font-size: 1rem; }
+.placeholder-sub {
+  font-size: 0.85rem !important;
+  color: rgba(58,44,34,0.5) !important;
+  margin-top: 6px !important;
+  line-height: 1.5;
+  text-align: center;
+}
+.placeholder-sub code { background: rgba(58,44,34,0.08); padding: 1px 6px; border-radius: 3px; font-size: 0.8rem; }
+
+.caption {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 4.5vw, 1.7rem);
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--rose-deep);
+}
+
+.signature {
+  margin-top: 36px;
+  font-family: 'Caveat', 'Segoe Script', cursive;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--gold-deep);
+}
+.signature span {
+  display: block;
+  font-family: 'Literata', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(58,44,34,0.55);
+  margin-top: 10px;
+}
+
+.continue-wrap { display: flex; justify-content: center; padding-top: 48px; }
+
+.continue-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 30px; border-radius: 999px;
+  border: 1px solid currentColor; background: transparent;
+  font-family: 'Literata', serif; font-style: italic; font-size: 1rem;
+  cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;
+}
+.continue-btn:hover, .continue-btn:focus-visible { transform: translateY(-1px); }
+.on-dark { color: var(--gold-soft); border-color: rgba(220,192,140,0.5); }
+.on-dark:hover { background: rgba(220,192,140,0.1); }
+.on-light { color: var(--plum); border-color: rgba(92,58,68,0.35); }
+.on-light:hover { background: rgba(92,58,68,0.06); }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .candle { animation: none; opacity: 1; transform: none; }
+}

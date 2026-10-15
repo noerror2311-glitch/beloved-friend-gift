@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For My Beloved Friend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page active bg-dark" data-page="1">
+    <div class="page-shell">
+      <div class="candle" aria-hidden="true"></div>
+      <p class="eyebrow">hi. hello. it's me.</p>
+      <h1>I made you something</h1>
+      <p class="hero-sub">Nothing fancy — just a few things I've been meaning to say, put somewhere they won't get lost.</p>
+      <div class="continue-wrap">
+        <button class="continue-btn on-dark" data-next="2">continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page bg-light" data-page="2">
+    <div class="page-shell">
+      <div class="wrap-inner">
+        <p class="eyebrow">a moment I didn't want to forget</p>
+        <div class="photo-frame" id="photoFrame">
+          <!--
+            HOW TO ADD YOUR PHOTO:
+            Put your image file in this same folder (next to index.html),
+            then replace "photo-placeholder.jpg" below with its file name,
+            e.g. src="us-hugging.jpg"
+          -->
+          <img src="photo-placeholder.jpg" alt="Us hugging" id="hugPhoto" onerror="this.style.display='none'">
+          <div class="placeholder-text" id="placeholderText">
+            <span class="placeholder-icon">🤍</span>
+            
+          </div>
+        </div>
+        <p class="caption">This is the hug I keep coming back to.</p>
+        <p class="body-text">The kind that says more than any message could — that we're okay, that we're close, that some people just feel like home.</p>
+        <div class="continue-wrap">
+          <button class="continue-btn on-light" data-next="3">continue →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page bg-light" data-page="3">
+    <div class="page-shell">
+      <div class="wrap-inner">
+        <p class="letter-open">I don't say this enough, so I'm saying it here, plainly, where it can't get lost in a busy day —</p>
+        <p class="body-text">you matter to me. Not in the vague way people mean when they say it in passing, but in the specific, everyday way — the kind that shows up in small moments, inside jokes, and the quiet relief of knowing you're just a call away.</p>
+        <p class="body-text">I don't always know how to say that when we're talking normally. It gets lost between the jokes and the logistics of life. So instead, I made you this.</p>
+        <div class="continue-wrap">
+          <button class="continue-btn on-light" data-next="4">continue →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page bg-light" data-page="4">
+    <div class="page-shell">
+      <div class="wrap-inner">
+        <h2 class="vows-heading">Here is what I promise you</h2>
+        <div class="vow-list">
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">I will always be there when you need me — not just when it's convenient.</p></div>
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">I will celebrate your wins like they're my own, loudly and without a trace of envy.</p></div>
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">Distance, time, or silence for a while will never change what we are to each other.</p></div>
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">You can call me whenever you need to — even at midnight, even for no reason at all.</p></div>
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">You will always have me on your side, especially when it feels like no one else is.</p></div>
+          <div class="vow"><span class="vow-mark" aria-hidden="true"></span><p class="vow-text">You will never be a burden to me — not on your hard days, and not on mine either.</p></div>
+        </div>
+        <div class="continue-wrap">
+          <button class="continue-btn on-light" data-next="5">continue →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page bg-light" data-page="5">
+    <div class="page-shell">
+      <div class="wrap-inner">
+        <p class="letter-open">So this is me, telling you — quietly, but for real — that you are one of the important people in my life.</p>
+        <p class="body-text">Thank you for being exactly who you are. I'll see you soon — but until then, this stays here for you.</p>
+        <div class="signature">with love, always<span>your friend</span></div>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
